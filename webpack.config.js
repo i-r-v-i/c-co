@@ -1,49 +1,56 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 
-module.exports = {
-  mode: 'development',
-  entry: path.resolve(__dirname, 'src', 'index.js' ),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-        publicPath: '',
-        clean: true,
-  },
-  devServer: {
-    static: path.resolve(__dirname, './dist'),
-    compress: true,
-    port: 8080,
-    open: true 
-  },
-  module: {
-    rules: [
-      {
-        // регулярное выражение, которое ищет все js файлы
-        test: /\.js$/,
-        // при обработке этих файлов нужно использовать babel-loader
-        use: 'babel-loader',
-        exclude: '/node_modules/'
-      },
-      {
-        // применять это правило только к CSS-файлам
-        test: /\.css$/,
-        // при обработке этих файлов нужно использовать
-        // MiniCssExtractPlugin.loader и css-loader
-        use: [MiniCssExtractPlugin.loader, {
-          loader: 'css-loader'
-        }]
-      },
-    
-      ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html' // путь к файлу index.html
-    }),
-    new MiniCssExtractPlugin(),
-  ]
-  
+module.exports = (env) => {
+  const isDev = env.mode === "development";
+  const isProd = env.mode === "production";
 
-}
+  return {
+    mode: env.mode ?? "development",
+    entry: path.resolve(__dirname, "src", "index.js"),
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: "[name].[contenthash].js",
+      clean: true,
+    },
+    resolve: {
+      extensions: [".js"],
+    },
+    devtool: isDev && "inline-source-map",
+    devServer: isDev
+      ? {
+          // static: path.resolve(__dirname, 'dist'),
+          // compress: true,
+          // hot: true,
+          port: env.port ?? 3000,
+          open: true,
+        }
+      : undefined,
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "public", "index.html"),
+      }),
+      isDev && new webpack.ProgressPlugin(),
+      new MiniCssExtractPlugin({
+        filename: "css/[name].[contenthash:8].css",
+      }),
+    ].filter(Boolean),
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          // при обработке этих файлов нужно использовать babel-loader
+          use: "babel-loader",
+          exclude: "/node_modules/",
+        },
+        {
+          test: /\.css$/,
+          use: [ isProd ? 'style-loader' : MiniCssExtractPlugin.loader, "css-loader"],
+        },
+      ],
+    },
+  };
+};
