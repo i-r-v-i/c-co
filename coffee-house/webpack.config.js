@@ -18,37 +18,46 @@ module.exports = (env) => {
     resolve: {
       extensions: [".js"],
     },
-    devtool: isDev && "inline-source-map",
+    devtool: isDev && "eval-source-map",
     devServer: isDev
       ? {
-          // static: path.resolve(__dirname, 'dist'),
-          // compress: true,
-          // hot: true,
-          port: env.port ?? 5000,
+          static: path.resolve(__dirname, 'dist'),
+          compress: true,
+          port: env.port ?? 3000,
           open: true,
+          hot: true,
+          
         }
       : undefined,
 
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "public", "index.html"),
+        favicon: path.resolve(__dirname, "public", "favicon.ico.svg"),
       }),
+      new webpack.HotModuleReplacementPlugin(),
       isDev && new webpack.ProgressPlugin(),
       new MiniCssExtractPlugin({
-        filename: "css/[name].[contenthash:8].css",
+        filename: "css/[name].css",
+       
       }),
     ].filter(Boolean),
+    
+      
     module: {
       rules: [
         {
+            test: /\.(png|svg|jpg|jpeg|gif|woff(2)?|woff|eot|ttf|otf)$/i,
+            type: 'asset/resource',
+          },
+        {
           test: /\.js$/,
-          // при обработке этих файлов нужно использовать babel-loader
           use: "babel-loader",
           exclude: "/node_modules/",
         },
         {
           test: /\.css$/,
-          use: [ isProd ? 'style-loader' : MiniCssExtractPlugin.loader, "css-loader"],
+          use: [ isProd ? 'style-loader' : {loader: MiniCssExtractPlugin.loader, options: {} },"css-loader"],
         },
       ],
     },
