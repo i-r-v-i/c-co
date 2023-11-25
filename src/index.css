@@ -2,11 +2,9 @@
 @import url(./vendor/fonts/fonts.css);
 @import url(./styles/variables/global.css);
 @import url(./styles/reset.css);
-body{
-  background-color: var(--bg-body)
+body {
+  background-color: var(--bg-body);
 }
-
-
 .container {
   max-width: 1440px;
   width: 100%;
@@ -23,7 +21,6 @@ main {
 .header {
   display: grid;
   grid-template-columns: 100px 1fr 72px;
-  height: 60px;
   align-items: center;
   font: var(--font-m);
   font-weight: var(--font-weight-bold);
@@ -36,6 +33,7 @@ main {
 .logo {
   width: 100px;
   height: 60px;
+  display: block
 }
 .nav__list {
   display: flex;
@@ -73,13 +71,18 @@ main {
   gap: 40px;
 }
 
-.enjoy__heading {
+.heading-1 {
   font: var(--font-1);
   font-weight: var(--font-weight-bold);
   color: var(--text-light);
   font-feature-settings: "clig" off, "liga" off;
 }
 
+.heading-1_menu {
+  color: var(--text-dark);
+  max-width: 800px;
+  width: 100%;
+}
 .enjoy__text {
   font: var(--font-m);
   font-weight: var(--font-weight-normal);
@@ -93,6 +96,8 @@ main {
   background-color: var(--bg-body);
   color: var(--text-dark);
   border: none;
+  font: var( --font-button);
+  font-weight: var(--font-weight-bold);
 }
 
 .span-title {
@@ -109,6 +114,7 @@ main {
 .heading-2 {
   font: var(--font-2);
   font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
 }
 
 .favorite-coffee__image {
@@ -370,4 +376,80 @@ main {
   width: 726px;
   height: 726px;
   border-radius: 20px;
+}
+/* menu */
+.header__menu_active {
+   border-bottom: 2px solid var(--text-dark) ;
+    
+}
+.link  {
+    text-decoration: none;
+    color: var(--text-dark);
+    
+}
+.menu-coffee {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.tabs__item {
+  padding: 8px 16px 8px 8px;
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid var(--border-light);
+  justify-content: center;
+  align-items: center;
+}
+.tabs__image {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  padding: 3px 7px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: var(--border-light);
+  border-radius: 100px;
+  border: 1px solid var(--border-light);
+}
+
+.button-text {
+    font: var( --font-button);
+    color: var(--text-dark);
+    font-weight: var(--font-weight-bold);
+}
+.tabs__icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16px;
+    height: 24px;
+}
+.tabs__icon_coffee {
+    background-image: url(./assets/icons/coffee.svg);
+}
+.tabs__icon_tea {
+    background-image: url(./assets/icons/tea.svg);
+}
+.tabs__icon_dessert {
+    background-image: url(./assets/icons/dessert.svg);
+}
+
+.drinks-list {
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(4, 310px);
+    grid-template-rows: repeat(2, 506px);
+    gap: 40px;
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a href="./index.html" class="link">
+        <img src="<%=require('../src/assets/icons/logo.svg')%>" alt="logo" class="logo"/></a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">Favorite coffee</li>
+            <li class="nav__item">About</li>
+            <li class="nav__item">Mobile app</li>
+            <li class="nav__item">Contact us</li>
+          </ul>
+        </nav>
+        <div class="header__menu header__menu_active">
+          <p class="header__text link_active">Menu</p>
+          <div class="header__cup"></div>
+        </div>
+      </header>
+      <main>
+        <section class="menu-coffee">
+          <h1 class="heading-2 heading-1_menu">
+            Behind each of our cups hides an
+            <span class="span-title">amazing surprise</span>
+          </h1>
+          <div class="tabs">
+            <div class="tabs__item tabs__item_coffee">
+              <div class="tabs__image">
+                <div class="tabs__icon tabs__icon_coffee"></div>
+              </div>
+              <span class="button-text tabs__name">Coffee</span>
+            </div>
+            <div class="tabs__item tabs__item_tea">
+                <div class="tabs__image">
+                  <div class="tabs__icon tabs__icon_tea"></div>
+                </div>
+                <span class="button-text tabs__name">Tea</span>
+              </div>
+              <div class="tabs__item tabs__item_dessert">
+                <div class="tabs__image">
+                  <div class="tabs__icon tabs__icon_dessert"></div>
+                </div>
+                <span class="button-text tabs__name">Dessert</span>
+              </div>
+          </div>
+          <div class="drinks-list">
+            
+          </div>
+        </section>
+        
+      </main>
+      <div class="footer">
+        <div class="footer__block">
+          <h2 class="footer__heading heading-2">
+            Sip, Savor, Smile. <span class="span-title">It’s coffee time!</span>
+          </h2>
+          <div class="cosial-links">
+            <div class="cosial-link"></div>
+            <div class="cosial-link"></div>
+            <div class="cosial-link"></div>
+          </div>
+        </div>
+        <div class="footer__block contact-us">
+          <h3 class="heading-3 contact-us__heading">Contact us</h3>
+          <div class="contacts">
+            <div class="contact-item">
+              <div class="contact-item__icon geo"></div>
+              <span class="contact-item__text">8558 Green Rd., LA</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon phone"></div>
+              <span class="contact-item__text">+1 (603) 555-0123</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon clock"></div>
+              <span class="contact-item__text">Mon-Sat: 9:00 AM – 23:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

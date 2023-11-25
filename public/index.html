@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Coffee-House</title>
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <img src="<%=require('../src/assets/icons/logo.svg')%>" alt="logo" />
+        <img src="<%=require('../src/assets/icons/logo.svg')%>" alt="logo" class="logo" />
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item">Favorite coffee</li>
@@ -18,14 +18,14 @@
           </ul>
         </nav>
         <div class="header__menu">
-          <p class="header__text">Menu</p>
+          <a href="./menu.html" class="link header__text">Menu</a>
           <div class="header__cup"></div>
         </div>
       </header>
-      <main>
-        <section class="enjoy">
-          <div class="enjoy__container">
-            <h1 class="enjoy__heading">
+       <main>
+        <section class="enjoy"> 
+           <div class="enjoy__container">
+            <h1 class="heading-1">
               <span class="span-title">Enjoy</span> premium coffee at our charming cafe
             </h1>
             <p class="enjoy__text">
@@ -34,13 +34,13 @@
               and inviting space to enjoy their favorite beverage.
             </p>
             <button class="button enjoy__button">Menu</button>
-          </div>
-        </section>
-        <section class="favorite-coffee">
+          </div> 
+         </section>
+        <section class="favorite-coffee"> 
           <h2 class="heading-2">
             Choose your <span class="span-title">favorite</span> coffee
-          </h2>
-          <div class="slider-container">
+          </h2> 
+           <div class="slider-container">
             <button class="arror-icon arror-icon_left"></button>
             <div class="drink-container">
               <img
@@ -63,8 +63,8 @@
             <div class="control control_active"></div>
             <div class="control"></div>
             <div class="control"></div>
-          </div>
-        </section>
+          </div> 
+         </section> 
         <section class="about">
           <h2 class="heading-2">
             Resource is <span class="span-title">the perfect and cozy place</span> where
@@ -90,10 +90,8 @@
                   class="about__image about__image_2" />
                 </div>
               </div>
-              
             </div>
         </section>
-
         <section class="apps">
           <div class="apps__text">
             <h2 class="heading-2">
@@ -129,7 +127,7 @@
             class="apps__foto"
           />
         </section>
-      </main>
+      </main> 
       <div class="footer">
         <div class="footer__block">
           <h2 class="footer__heading heading-2">

@@ -35,6 +35,11 @@ module.exports = (env) => {
         template: path.resolve(__dirname, "public", "index.html"),
         favicon: path.resolve(__dirname, "public", "favicon.ico.svg"),
       }),
+      new HtmlWebpackPlugin({
+        filename: "menu.html",
+        template: path.resolve(__dirname, "public", "menu.html"),
+        favicon: path.resolve(__dirname, "public", "favicon.ico.svg"),
+      }),
       new webpack.HotModuleReplacementPlugin(),
       isDev && new webpack.ProgressPlugin(),
       new MiniCssExtractPlugin({
