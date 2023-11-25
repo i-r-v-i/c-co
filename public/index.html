@@ -10,12 +10,12 @@
       <header class="header">
         <img src="<%=require('../src/assets/icons/logo.svg')%>" alt="logo" />
         <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item">Favorite coffee</li>
-                <li class="nav__item">About</li>
-                <li class="nav__item">Mobile app</li>
-                <li class="nav__item">Contact us</li>
-            </ul>
+          <ul class="nav__list">
+            <li class="nav__item">Favorite coffee</li>
+            <li class="nav__item">About</li>
+            <li class="nav__item">Mobile app</li>
+            <li class="nav__item">Contact us</li>
+          </ul>
         </nav>
         <div class="header__menu">
           <p class="header__text">Menu</p>
@@ -23,51 +23,142 @@
         </div>
       </header>
       <main>
-      <section class="enjoy">
-        <div class="enjoy__container">
-            <h1 class="enjoy__heading">Enjoy premium coffee at our charming cafe</h1>
-            <p class="enjoy__text">With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
-            <button class="enjoy__button">Menu</button>
-        </div>
-      </section>
-      <section class="favorite-coffee">
-        <h2 class="heading-2">
-          Choose your <span class="span-title">favorite</span> coffee
-        </h2>
-        <div class="slider-container">
-          <button class="arror-icon arror-icon_left"></button>
-          <div class="drink-container">
-            <img
-              src="<%=require('../src/assets/images/coffee_slider_1.png')%>"
-              alt="slider of drinks"
-              class="favorite-coffee__image"
-            />
-            <div class="favorite-coffee__text">
-              <h3 class="heading-3">S’mores Frappuccino</h3>
-              <p class="favorite-coffee__about">
-                This new drink takes an espresso and mixes it with brown sugar and
-                cinnamon before being topped with oat milk.
-              </p>
-              <span class="favorite-coffee__price">$5.50</span>
+        <section class="enjoy">
+          <div class="enjoy__container">
+            <h1 class="enjoy__heading">
+              <span class="span-title">Enjoy</span> premium coffee at our charming cafe
+            </h1>
+            <p class="enjoy__text">
+              With its inviting atmosphere and delicious coffee options, the Coffee House
+              Resource is a popular destination for coffee lovers and those seeking a warm
+              and inviting space to enjoy their favorite beverage.
+            </p>
+            <button class="button enjoy__button">Menu</button>
+          </div>
+        </section>
+        <section class="favorite-coffee">
+          <h2 class="heading-2">
+            Choose your <span class="span-title">favorite</span> coffee
+          </h2>
+          <div class="slider-container">
+            <button class="arror-icon arror-icon_left"></button>
+            <div class="drink-container">
+              <img
+                src="<%=require('../src/assets/images/coffee_slider_1.png')%>"
+                alt="slider of drinks"
+                class="favorite-coffee__image"
+              />
+              <div class="favorite-coffee__text">
+                <h3 class="heading-3">S’mores Frappuccino</h3>
+                <p class="section-text">
+                  This new drink takes an espresso and mixes it with brown sugar and
+                  cinnamon before being topped with oat milk.
+                </p>
+                <span class="favorite-coffee__price">$5.50</span>
+              </div>
+            </div>
+            <button class="arror-icon arror-icon_right"></button>
+          </div>
+          <div class="controls">
+            <div class="control control_active"></div>
+            <div class="control"></div>
+            <div class="control"></div>
+          </div>
+        </section>
+        <section class="about">
+          <h2 class="heading-2">
+            Resource is <span class="span-title">the perfect and cozy place</span> where
+            you can enjoy a variety of hot beverages, relax, catch up with friends, or get
+            some work done.
+          </h2>
+          <div class="about__container">
+            <div class="about__column">
+              <div class="about__image-container about__image-container_1">
+                <img src="<%=require('../src/assets/images/about_1.png')%>" alt="" class="about__image about__image_1" />
+              </div>
+              <div class="about__image-container about__image-container_2">
+                <img src="<%=require('../src/assets/images/about_2.png')%>" alt="" 
+                class="about__image about__image_2" />
+              </div>
+            </div>
+            <div class="about__column">
+                <div class="about__image-container about__image-container_3">
+                  <img src="<%=require('../src/assets/images/about_3.png')%>" alt="" class="about__image about__image_1" />
+                </div>
+                <div class="about__image-container about__image-container_4">
+                  <img src="<%=require('../src/assets/images/about_4.png')%>" alt="" 
+                  class="about__image about__image_2" />
+                </div>
+              </div>
+              
+            </div>
+        </section>
+
+        <section class="apps">
+          <div class="apps__text">
+            <h2 class="heading-2">
+              <span class="span-title">Download</span> our apps to start ordering
+            </h2>
+            <p class="section-text apps__paragrath">
+              Download the Resource app today and experience the comfort of ordering your
+              favorite coffee from wherever you are
+            </p>
+            <div class="apps__buttons">
+              <button class="button apps__button">
+                <div class="button__text">
+                  <div class="apps-logo apps-logo_apple"></div>
+                  <div class="button-name">
+                    Available on the
+                    <span>App Store</span>
+                  </div>
+                </div>
+              </button>
+              <button class="button apps__button">
+                <div class="button__text">
+                  <div class="apps-logo apps-logo_android"></div>
+                  <div class="button-name button-name_android">
+                    Available on the <span>Google Play</span>
+                  </div>
+                </div>
+              </button>
             </div>
           </div>
-          <button class="arror-icon arror-icon_right"></button>
-        </div>
-        <div class="controls">
-          <div class="control control_active"></div>
-          <div class="control"></div>
-          <div class="control"></div>
-        </div>
-      </section>
+          <img
+            src="<%=require('../src/assets/images/mobile-screens.png')%>"
+            alt=""
+            class="apps__foto"
+          />
+        </section>
       </main>
       <div class="footer">
-
+        <div class="footer__block">
+          <h2 class="footer__heading heading-2">
+            Sip, Savor, Smile. <span class="span-title">It’s coffee time!</span>
+          </h2>
+          <div class="cosial-links">
+            <div class="cosial-link"></div>
+            <div class="cosial-link"></div>
+            <div class="cosial-link"></div>
+          </div>
+        </div>
+        <div class="footer__block contact-us">
+          <h3 class="heading-3 contact-us__heading">Contact us</h3>
+          <div class="contacts">
+            <div class="contact-item">
+              <div class="contact-item__icon geo"></div>
+              <span class="contact-item__text">8558 Green Rd., LA</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon phone"></div>
+              <span class="contact-item__text">+1 (603) 555-0123</span>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon clock"></div>
+              <span class="contact-item__text">Mon-Sat: 9:00 AM – 23:00 PM</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- <img
-      src="<%=require('../src/assets/images/about_2.png')%>"
-      width="{100}"
-      alt="fgfh"
-    /> -->
   </body>
 </html>

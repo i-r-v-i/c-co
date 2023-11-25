@@ -82,7 +82,7 @@ main {
   color: var(--text-light);
 }
 
-.enjoy__button {
+.button {
   width: 200px;
   height: 64px;
   border-radius: 100px;
@@ -125,7 +125,7 @@ main {
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
 }
-.favorite-coffee__about {
+.section-text {
   font: var(--font-m);
   font-weight: var(--font-weight-normal);
   color: var(--text-dark);
@@ -139,7 +139,6 @@ main {
   font-feature-settings: "clig" off, "liga" off;
   font: var(--font-3);
   font-weight: var(--font-weight-bold);
-  
 }
 .slider-container {
   width: 100%;
@@ -161,10 +160,10 @@ main {
   background-size: cover;
 }
 .arror-icon_left {
-  background-image: url(../src/assets/icons/button-arror-left-dark.svg);
+  background-image: url(./assets/icons/button-arror-left-dark.svg);
 }
 .arror-icon_right {
-  background-image: url(../src/assets/icons/button-arrow-right-dark.svg);
+  background-image: url(./assets/icons/button-arrow-right-dark.svg);
 }
 .controls {
   display: flex;
@@ -179,7 +178,192 @@ main {
 }
 
 .control_active {
-    
-    background: var(--border-dark);
-    
+  background: var(--border-dark);
+}
+.apps {
+  display: grid;
+  gap: 100px;
+  grid-template-columns: 1fr 1fr;
+}
+.apps__foto {
+  width: 100%;
+}
+
+.apps__text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.apps__buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.apps__paragrath {
+  text-align: start;
+}
+
+.apps__button {
+  border: 1px solid var(--border-dark);
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+.button__text {
+  display: flex;
+  gap: 8px;
+  font: var(--font-s);
+  font-weight: var(--font-weight-bold);
+}
+.apps-logo {
+  width: 36px;
+  height: 36px;
+}
+.apps-logo_apple {
+  background-image: url(./assets/icons/apple.svg);
+}
+.apps-logo_android {
+  background-image: url(../src/assets/icons/android.svg);
+}
+.button-name {
+  width: 77px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.button-name span {
+  font: var(--font-m);
+  font-weight: var(--font-weight-bold);
+}
+.button-name_android {
+  width: 92px;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* max-width: 1360px; */
+  padding: 100px;
+  /* justify-content: center;
+  align-items: center; */
+  gap: 100px;
+  /* align-self: stretch; */
+  border-radius: 40px;
+  background: var(--bg-container);
+  margin-top: 100px;
+}
+.footer__block {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+.footer__heading {
+  color: var(--text-light);
+  font-feature-settings: "clig" off, "liga" off;
+  font-weight: var(--font-weight-bold);
+}
+.cosial-links {
+  display: flex;
+  gap: 12px;
+}
+.cosial-link {
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+}
+.cosial-link:first-of-type {
+  background-image: url(./assets/icons/twitter.svg);
+}
+
+.cosial-link:nth-of-type(2) {
+  background-image: url(./assets/icons/instagram.svg);
+  border-radius: 100px;
+  border: 1.5px solid var(--border-light);
+  display: flex;
+  background-position: center;
+}
+.cosial-link:nth-of-type(3) {
+  background-image: url(./assets/icons/facebook.svg);
+}
+.contact-us {
+  padding: 30px 0;
+  display: flex;
+  gap: 40px;
+}
+.contact-us__heading {
+  color: var(--text-light);
+  text-align: left;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-item {
+  display: flex;
+  gap: 8px;
+}
+
+.contact-item__text {
+  font: var(--font-m);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-light);
+  font-feature-settings: "clig" off, "liga" off;
+}
+.contact-item__icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.geo {
+  background-image: url(./assets/icons/pin-alt.svg);
+}
+.phone {
+  background-image: url(./assets/icons/phone.svg);
+}
+.clock {
+  background-image: url(./assets/icons/clock.svg);
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about__container {
+  display: flex;
+  gap: 40px;
+}
+
+.about__column {
+  display: flex;
+  flex-direction: column;
+  width: 660px;
+  height: 1060px;
+  gap: 40px;
+}
+
+.about__image-container {
+  overflow: hidden;
+  border-radius: 20px;
+}
+.about__image-container_1 {
+  width: 660px;
+  height: 590px;
+}
+.about__image-container_2 {
+  width: 660px;
+  height: 430px;
+}
+
+.about__image {
+  width: 726px;
+  height: 726px;
+  border-radius: 20px;
 }
