@@ -32,6 +32,7 @@ module.exports = (env) => {
 
     plugins: [
       new HtmlWebpackPlugin({
+        filename: "index.html",
         template: path.resolve(__dirname, "public", "index.html"),
         favicon: path.resolve(__dirname, "public", "favicon.ico.svg"),
       }),
@@ -52,14 +53,30 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-            test: /\.(png|svg|jpg|jpeg|gif|woff(2)?|woff|eot|ttf|otf)$/i,
+          test: /\.(woff|woff2|ttf|otf|eot)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/fonts/[name][ext]'
+          } 
+        },
+        {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
             type: 'asset/resource',
+            generator: {
+              filename: 'assets/img/[name][ext]'
+            } 
           },
         {
           test: /\.js$/,
-          use: "babel-loader",
+          use: {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true, // Использование кэша для избежания рекомпиляции
+              // при каждом запуске
+            },
+          },
           exclude: "/node_modules/",
-        },
+      },
         {
           test: /\.css$/,
           use: [ isProd ? 'style-loader' : {loader: MiniCssExtractPlugin.loader, options: {} },"css-loader"],

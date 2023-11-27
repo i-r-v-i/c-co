@@ -2,7 +2,7 @@
     --font-family: Inter, sans-serif;
     --font-size-1: 72px;
     --font-weight-bold: bold;
-    --font-line-1: 105%;
+    --font-line-1: 75.6px;
     --font-style: italic;
     --font-1: var(--font-size-1) / var(--font-line-1) var(--font-family);
   
@@ -11,7 +11,7 @@
     --font-2: var(--font-size-2) / var(--font-line-2) var(--font-family);
   
     --font-size-3: 24px;
-    --font-2: var(--font-size-3) / var(--font-line-2) var(--font-family);
+    --font-3: var(--font-size-3) / var(--font-line-2) var(--font-family);
   
     --font-size-m: 16px;
     --font-weight-normal: 400;
@@ -26,7 +26,7 @@
     --font-line-b-link: 125%;
     --font-b-link: var(--font-size-b-link) / var(--font-line-b-link) var(--font-family);
   
-    --font-button: var(--font-size-m) / var(--font-b-link) var(--font-family);
+    --font-button: var(--font-size-m) / var(--font-line-m) var(--font-family);
   
     /* цвета */
     --text-light: #e1d4c9;

@@ -2,6 +2,11 @@
 @import url(./vendor/fonts/fonts.css);
 @import url(./styles/variables/global.css);
 @import url(./styles/reset.css);
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-body);
 }
@@ -11,6 +16,14 @@ body {
   padding: 20px 40px 40px;
   background-color: var(--bg-body);
   margin: 0 auto;
+}
+.link {
+  display: block;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+.link-non-active {
+  cursor: default;
 }
 main {
   display: flex;
@@ -33,21 +46,22 @@ main {
 .logo {
   width: 100px;
   height: 60px;
-  display: block
+  display: block;
 }
 .nav__list {
   display: flex;
   justify-content: center;
   gap: 40px;
+  align-items: center;
   list-style: none;
 }
 .header__menu {
   display: flex;
   gap: 8px;
-  align-items: baseline;
+  align-items: center;
 }
 
-.header__cup {
+.header-cup {
   background-image: url(./assets/icons/coffee-cup.svg);
   width: 20px;
   height: 20px;
@@ -76,9 +90,10 @@ main {
   font-weight: var(--font-weight-bold);
   color: var(--text-light);
   font-feature-settings: "clig" off, "liga" off;
+  align-self: stretch;
 }
 
-.heading-1_menu {
+.heading-2_menu {
   color: var(--text-dark);
   max-width: 800px;
   width: 100%;
@@ -88,16 +103,44 @@ main {
   font-weight: var(--font-weight-normal);
   color: var(--text-light);
 }
-
 .button {
   width: 200px;
   height: 64px;
   border-radius: 100px;
   background-color: var(--bg-body);
   color: var(--text-dark);
-  border: none;
-  font: var( --font-button);
+  font: var(--font-button);
   font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+.button_menu {
+  border: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_menu span {
+  position: relative;
+  left: 14px;
+  transition: left 0.3s ease-in;
+}
+.button_menu:hover span {
+  left: 0;
+  transition: left 0.3s ease-in;
+}
+
+.button_menu .header-cup {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s ease-in;
+}
+.button_menu:hover .header-cup {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.6s;
 }
 
 .span-title {
@@ -120,6 +163,7 @@ main {
 .favorite-coffee__image {
   width: 480px;
   height: 480px;
+  margin-bottom: 20px;
 }
 
 .favorite-coffee__text {
@@ -158,23 +202,50 @@ main {
   gap: 40px;
   justify-items: center;
 }
-
-.arror-icon {
-  align-self: center;
-  border: none;
-  background-color: var(--bg-body);
+.arrow-button {
   width: 60px;
   height: 60px;
+  border-radius: 100px;
+  border: 1px solid var(--border-dark);
+  align-self: center;
+  display: flex;
+  transition: background-color 0.5s ease-out;
+}
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  background-color: var(--bg-body);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transition: background-color 0.5s ease-out;
 }
-.arror-icon_left {
-  background-image: url(./assets/icons/button-arror-left-dark.svg);
+
+.arrow-button:hover {
+  background-color: var(--bg-container);
+  transition: background-color 0.5s ease-out;
 }
-.arror-icon_right {
-  background-image: url(./assets/icons/button-arrow-right-dark.svg);
+.arrow-button:hover .arrow-icon {
+  background-color: var(--bg-container);
+  transition: background-color 0.5s ease-out;
 }
+
+.arrow-icon_left {
+  background-image: url(./assets/icons/arrow-left.svg);
+}
+
+.arrow-button:hover .arrow-icon_left {
+  background-image: url(./assets/icons/arrow-left_hover.svg);
+}
+
+.arrow-icon_right {
+  background-image: url(./assets/icons/arrow-right.svg);
+}
+.arrow-button:hover .arrow-icon_right {
+  background-image: url(./assets/icons/arrow-right_hover.svg);
+}
+
 .controls {
   display: flex;
   width: 144px;
@@ -215,10 +286,18 @@ main {
   text-align: start;
 }
 
-.apps__button {
+.button_app {
   border: 1px solid var(--border-dark);
+  background-color: var(--bg-body);
   padding: 12px 20px;
-  box-sizing: border-box;
+  transition: border 0.5s ease-out, background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.button_app:hover {
+  border: 1px solid var(--bg-container);
+  background-color: var(--bg-container);
+  color: var(--text-light);
+  transition: border 0.5s ease-out, background-color 0.5s ease-out, color 0.5s ease-out;
 }
 
 .button__text {
@@ -227,6 +306,11 @@ main {
   font: var(--font-s);
   font-weight: var(--font-weight-bold);
 }
+
+.button_app:hover .button__text {
+  color: var(--text-light);
+}
+
 .apps-logo {
   width: 36px;
   height: 36px;
@@ -234,9 +318,19 @@ main {
 .apps-logo_apple {
   background-image: url(./assets/icons/apple.svg);
 }
+
+.button_app:hover .apps-logo_apple {
+  background-image: url(./assets/icons/apple_light.svg);
+}
+
 .apps-logo_android {
   background-image: url(../src/assets/icons/android.svg);
 }
+
+.button_app:hover .apps-logo_android {
+  background-image: url(../src/assets/icons/android_light.svg);
+}
+
 .button-name {
   width: 77px;
   display: flex;
@@ -254,12 +348,8 @@ main {
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* max-width: 1360px; */
   padding: 100px;
-  /* justify-content: center;
-  align-items: center; */
   gap: 100px;
-  /* align-self: stretch; */
   border-radius: 40px;
   background: var(--bg-container);
   margin-top: 100px;
@@ -279,24 +369,45 @@ main {
   gap: 12px;
 }
 .cosial-link {
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  transition: background-color 0.5s ease-out;
+}
+.cosial-button {
   width: 60px;
   height: 60px;
-  background-repeat: no-repeat;
+  display: flex;
 }
+
+.cosial-link:hover {
+  background-color: var(--bg-body);
+  transition: background-color 0.5s ease-out;
+}
+
 .cosial-link:first-of-type {
   background-image: url(./assets/icons/twitter.svg);
+}
+.cosial-link:first-of-type:hover {
+  background-image: url(./assets/icons/twitter_dark.svg);
 }
 
 .cosial-link:nth-of-type(2) {
   background-image: url(./assets/icons/instagram.svg);
-  border-radius: 100px;
-  border: 1.5px solid var(--border-light);
-  display: flex;
-  background-position: center;
 }
+
+.cosial-link:nth-of-type(2):hover {
+  background-image: url(./assets/icons/instagram_dark.svg);
+}
+
 .cosial-link:nth-of-type(3) {
   background-image: url(./assets/icons/facebook.svg);
 }
+.cosial-link:nth-of-type(3):hover {
+  background-image: url(./assets/icons/facebook_dark.svg);
+}
+
 .contact-us {
   padding: 30px 0;
   display: flex;
@@ -310,6 +421,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: flex-start;
 }
 .contact-item {
   display: flex;
@@ -347,18 +459,21 @@ main {
 }
 
 .about__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 
 .about__column {
-  display: flex;
-  flex-direction: column;
-  width: 660px;
-  height: 1060px;
+  display: grid;
   gap: 40px;
 }
-
+.about__column_1 {
+  grid-template-rows: 590px 430px;
+}
+.about__column_2 {
+  grid-template-rows: 430px 590px;
+}
 .about__image-container {
   overflow: hidden;
   border-radius: 20px;
@@ -376,17 +491,69 @@ main {
   width: 726px;
   height: 726px;
   border-radius: 20px;
+  position: relative;
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+  right: 33px;
 }
+
+.about__image:hover {
+  transform: scale(0.9);
+  transition: transform 0.5s ease-out;
+}
+.about__image_1 {
+  bottom: 68px;
+}
+.about__image_2 {
+  bottom: 148px;
+}
+
 /* menu */
 .header__menu_active {
-   border-bottom: 2px solid var(--text-dark) ;
-    
+  border-bottom: 2px solid var(--text-dark);
+  padding-bottom: 3px;
 }
-.link  {
-    text-decoration: none;
-    color: var(--text-dark);
-    
+
+.nav-item {
+  position: relative;
 }
+.nav-item::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--text-dark);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out;
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1);
+}
+.nav-light {
+  position: relative;
+}
+
+.nav-light::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--text-light);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out;
+}
+
+.nav-light:hover::before {
+  transform: scaleX(1);
+}
+
 .menu-coffee {
   display: flex;
   flex-direction: column;
@@ -400,8 +567,8 @@ main {
   gap: 16px;
   justify-content: center;
   align-items: center;
- 
 }
+
 .tabs__item {
   padding: 8px 16px 8px 8px;
   display: flex;
@@ -410,7 +577,22 @@ main {
   border: 1px solid var(--border-light);
   justify-content: center;
   align-items: center;
+  transition: background-color 0.5s ease-out, border-color 0.5s ease-out;
+  cursor: pointer;
 }
+
+.tabs__item:hover {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+  transition: background-color 0.5s ease-out, border-color 0.5s ease-out;
+}
+
+.tabs__item_active {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+  cursor: default;
+}
+
 .tabs__image {
   width: 30px;
   height: 30px;
@@ -423,27 +605,45 @@ main {
   border-radius: 100px;
   border: 1px solid var(--border-light);
 }
+.tabs__item_active .tabs__image {
+  background: var(--bg-body);
+}
+
+.tabs__item:hover .tabs__image {
+  background-color: var(--bg-body);
+  transition: background-color 0.5s ease-out;
+}
 
 .button-text {
-    font: var( --font-button);
-    color: var(--text-dark);
-    font-weight: var(--font-weight-bold);
+  font: var(--font-button);
+  color: var(--text-dark);
+  font-weight: var(--font-weight-bold);
+  transition: color 0.5s ease-out;
 }
+.tabs__item_active .button-text {
+  color: var(--text-light);
+}
+
+.tabs__item:hover .button-text {
+  color: var(--text-light);
+  transition: color 0.5s ease-out;
+}
+
 .tabs__icon {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 16px;
-    height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 24px;
 }
 .tabs__icon_coffee {
-    background-image: url(./assets/icons/coffee.svg);
+  background-image: url(./assets/icons/coffee.svg);
 }
 .tabs__icon_tea {
-    background-image: url(./assets/icons/tea.svg);
+  background-image: url(./assets/icons/tea.svg);
 }
 .tabs__icon_dessert {
-    background-image: url(./assets/icons/dessert.svg);
+  background-image: url(./assets/icons/dessert.svg);
 }
 
 .drinks-list {
@@ -457,29 +657,46 @@ main {
   border-radius: 40px;
   border: 1px solid var(--border-light);
 }
+
 .drink-card__foto {
   width: 310px;
   height: 310px;
   overflow: hidden;
   border-radius: 40px;
 }
+
 .drink-card__image {
   width: 100%;
   height: 100%;
+  transform: scale(1.1);
+  transition: transform 0.5s ease-out;
+}
+.drink-card:hover .drink-card__image {
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
 }
 
 .drink-card__description {
+  height: 190px;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.drink-card__about {
+  display: flex;
+  flex-direction: column;
+  padding: auto;
   gap: 12px;
   align-items: flex-start;
 }
+
 .drink-card__name {
   font-weight: var(--font-weight-bold);
 }
 
-.drink-card__about {
+.drink-card__text {
   font: var(--font-m);
   font-weight: var(--font-weight-normal);
   text-align: left;
