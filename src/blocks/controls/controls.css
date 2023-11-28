@@ -1,0 +1,5 @@
+.controls {
+  display: flex;
+  width: 144px;
+  gap: 12px;
+}

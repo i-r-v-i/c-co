@@ -1,0 +1,7 @@
+.drinks-list {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(4, 310px);
+  grid-template-rows: repeat(2, 506px);
+  gap: 40px;
+}

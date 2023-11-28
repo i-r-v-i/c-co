@@ -1,0 +1,24 @@
+.tabs__item {
+  padding: 8px 16px 8px 8px;
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid var(--border-light);
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease-out, border-color 0.5s ease-out;
+  cursor: pointer;
+}
+.tabs__item:hover {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+  transition: background-color 0.5s ease-out, border-color 0.5s ease-out;
+}
+.tabs__item:hover .tabs__image {
+  background-color: var(--bg-body);
+  transition: background-color 0.5s ease-out;
+}
+.tabs__item:hover .button-text {
+  color: var(--text-light);
+  transition: color 0.5s ease-out;
+}

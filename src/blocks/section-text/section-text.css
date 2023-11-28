@@ -1,0 +1,7 @@
+.section-text {
+  font: var(--font-m);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-dark);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+}

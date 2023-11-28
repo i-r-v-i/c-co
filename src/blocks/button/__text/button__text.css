@@ -1,0 +1,6 @@
+.button__text {
+  display: flex;
+  gap: 8px;
+  font: var(--font-s);
+  font-weight: var(--font-weight-bold);
+}

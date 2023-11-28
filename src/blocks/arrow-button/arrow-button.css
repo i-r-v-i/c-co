@@ -1,0 +1,23 @@
+.arrow-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  border: 1px solid var(--border-dark);
+  align-self: center;
+  display: flex;
+  transition: background-color 0.5s ease-out;
+}
+.arrow-button:hover {
+  background-color: var(--bg-container);
+  transition: background-color 0.5s ease-out;
+}
+.arrow-button:hover .arrow-icon {
+  background-color: var(--bg-container);
+  transition: background-color 0.5s ease-out;
+}
+.arrow-button:hover .arrow-icon_left {
+  background-image: url(./assets/icons/arrow-left_hover.svg);
+}
+.arrow-button:hover .arrow-icon_right {
+  background-image: url(./assets/icons/arrow-right_hover.svg);
+}

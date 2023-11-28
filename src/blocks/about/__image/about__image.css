@@ -1,0 +1,13 @@
+.about__image {
+  width: 726px;
+  height: 726px;
+  border-radius: 20px;
+  position: relative;
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+  right: 33px;
+}
+.about__image:hover {
+  transform: scale(0.9);
+  transition: transform 0.5s ease-out;
+}

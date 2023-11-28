@@ -1,0 +1,21 @@
+.button_app {
+  border: 1px solid var(--border-dark);
+  background-color: var(--bg-body);
+  padding: 12px 20px;
+  transition: border 0.5s ease-out, background-color 0.5s ease-out, color 0.5s ease-out;
+}
+.button_app:hover {
+  border: 1px solid var(--bg-container);
+  background-color: var(--bg-container);
+  color: var(--text-light);
+  transition: border 0.5s ease-out, background-color 0.5s ease-out, color 0.5s ease-out;
+}
+.button_app:hover .button__text {
+  color: var(--text-light);
+}
+.button_app:hover .apps-logo_apple {
+  background-image: url(./assets/icons/apple_light.svg);
+}
+.button_app:hover .apps-logo_android {
+  background-image: url(../src/assets/icons/android_light.svg);
+}

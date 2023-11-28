@@ -1,0 +1,27 @@
+.button_menu {
+  border: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.button_menu span {
+  position: relative;
+  left: 14px;
+  transition: left 0.3s ease-in;
+}
+.button_menu:hover span {
+  left: 0;
+  transition: left 0.3s ease-in;
+}
+.button_menu .header-cup {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.3s, opacity 0.3s ease-in;
+}
+.button_menu:hover .header-cup {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.6s;
+}

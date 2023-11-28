@@ -1,0 +1,29 @@
+.cosial-link {
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  transition: background-color 0.5s ease-out;
+}
+.cosial-link:hover {
+  background-color: var(--bg-body);
+  transition: background-color 0.5s ease-out;
+}
+.cosial-link:first-of-type {
+  background-image: url(./assets/icons/twitter.svg);
+}
+.cosial-link:first-of-type:hover {
+  background-image: url(./assets/icons/twitter_dark.svg);
+}
+.cosial-link:nth-of-type(2) {
+  background-image: url(./assets/icons/instagram.svg);
+}
+.cosial-link:nth-of-type(2):hover {
+  background-image: url(./assets/icons/instagram_dark.svg);
+}
+.cosial-link:nth-of-type(3) {
+  background-image: url(./assets/icons/facebook.svg);
+}
+.cosial-link:nth-of-type(3):hover {
+  background-image: url(./assets/icons/facebook_dark.svg);
+}

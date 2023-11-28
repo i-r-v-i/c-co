@@ -1,0 +1,11 @@
+.tabs__item_active {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+  cursor: default;
+}
+.tabs__item_active .tabs__image {
+  background: var(--bg-body);
+}
+.tabs__item_active .button-text {
+  color: var(--text-light);
+}

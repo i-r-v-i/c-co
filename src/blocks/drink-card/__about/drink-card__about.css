@@ -1,0 +1,7 @@
+.drink-card__about {
+  display: flex;
+  flex-direction: column;
+  padding: auto;
+  gap: 12px;
+  align-items: flex-start;
+}

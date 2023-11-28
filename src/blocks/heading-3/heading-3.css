@@ -1,0 +1,7 @@
+.heading-3 {
+  font: var(--font-3);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-dark);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+}

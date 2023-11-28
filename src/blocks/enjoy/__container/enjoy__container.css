@@ -1,0 +1,6 @@
+.enjoy__container {
+  display: flex;
+  width: 530px;
+  flex-direction: column;
+  gap: 40px;
+}

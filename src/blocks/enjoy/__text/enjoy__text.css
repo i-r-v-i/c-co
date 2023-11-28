@@ -1,0 +1,5 @@
+.enjoy__text {
+  font: var(--font-m);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-light);
+}

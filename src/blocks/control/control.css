@@ -1,0 +1,6 @@
+.control {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background: var(--border-light);
+}

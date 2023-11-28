@@ -1,0 +1,10 @@
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  background-color: var(--bg-body);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: background-color 0.5s ease-out;
+}

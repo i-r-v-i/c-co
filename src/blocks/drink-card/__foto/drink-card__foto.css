@@ -1,0 +1,6 @@
+.drink-card__foto {
+  width: 310px;
+  height: 310px;
+  overflow: hidden;
+  border-radius: 40px;
+}

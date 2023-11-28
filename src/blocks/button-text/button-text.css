@@ -1,0 +1,6 @@
+.button-text {
+  font: var(--font-button);
+  color: var(--text-dark);
+  font-weight: var(--font-weight-bold);
+  transition: color 0.5s ease-out;
+}

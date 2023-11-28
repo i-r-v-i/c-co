@@ -1,0 +1,8 @@
+.drink-card__description {
+  height: 190px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}

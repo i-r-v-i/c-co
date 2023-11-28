@@ -1,0 +1,6 @@
+.contact-item__text {
+  font: var(--font-m);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-light);
+  font-feature-settings: "clig" off, "liga" off;
+}

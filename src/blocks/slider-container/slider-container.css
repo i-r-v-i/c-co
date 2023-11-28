@@ -1,0 +1,8 @@
+.slider-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  /* grid-template-rows: ; */
+  gap: 40px;
+  justify-items: center;
+}

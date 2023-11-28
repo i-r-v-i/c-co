@@ -1,0 +1,10 @@
+.button-name {
+  width: 77px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.button-name span {
+  font: var(--font-m);
+  font-weight: var(--font-weight-bold);
+}
